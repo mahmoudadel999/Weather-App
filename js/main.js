@@ -30,22 +30,22 @@ else {
   display('Cairo');
 }
 
-// search.addEventListener("input", async function () {
-//    if (/\w{1,}/.test(search.value)) {
-//       let weatherData = [];
-//       try {
-//          let myHttp = await fetch(
-//             `https://api.weatherapi.com/v1/search.json?key=6604b0953f764b359e0115848240501&q=${search.value}`
-//          );
-//          weatherData = await myHttp.json();
-//          if (weatherData.length > 0) {
-//             display(weatherData[0].url);
-//          }
-//       } catch (error) {
-//          console.error("Error fetching weather data:", error);
-//       }
-//    }
-// });
+search.addEventListener("input", async function () {
+   if (/\w{1,}/.test(search.value)) {
+      let weatherData = [];
+      try {
+         let myHttp = await fetch(
+            `https://api.weatherapi.com/v1/search.json?key=6604b0953f764b359e0115848240501&q=${search.value}`
+         );
+         weatherData = await myHttp.json();
+         if (weatherData.length > 0) {
+            display(weatherData[0].url);
+         }
+      } catch (error) {
+         console.error("Error fetching weather data:", error);
+      }
+   }
+});
 
 async function display(search) {
   let response = await fetch(
